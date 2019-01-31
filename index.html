@@ -34,13 +34,13 @@
         </p>
 
         <p class="panel-tabs has-text-weight-semibold" data-target="tasks.states">
-            <a data-target="tasks.active" data-action="tasks#showActive">Active</a>
-            <a data-target="tasks.complete" data-action="tasks#showComplete">Completed</a>
+            <a data-target="tasks.active" data-action="tasks#showActive">{{🎨.active}}</a>
+            <a data-target="tasks.complete" data-action="tasks#showComplete">{{🎨.complete}}</a>
         </p>
 
         <div class="panel-block task-add-block is-droppable" data-target="tasks.addTaskPanel">
             <form data-action="tasks#add" class="control">
-                <input class="input" type="text" data-target="tasks.addTaskInput" placeholder="Add a task">
+                <input class="input" type="text" data-target="tasks.addTaskInput" placeholder="{{🎨.add}}">
             </form>
         </div>
 
