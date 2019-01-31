@@ -1,0 +1,12 @@
+
+title:
+  type: string
+  optional: true
+
+hierarchy: hierarchy
+
+status:
+  type: options
+  values:
+    - active
+    - complete

@@ -1,0 +1,94 @@
+
+html{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: #e3e8ee;
+}
+
+main{
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
+@mixin checked() {
+  .is-checked{
+    display:inline-flex;
+  }
+  .is-unchecked{
+    display:none;
+  }
+}
+
+.panel{
+  box-shadow: 0 7px 14px 0 rgba(59,65,94, 0.1), 0 3px 6px 0 rgba(0, 0, 0, .07);
+}
+
+.panel-heading, .panel-tabs, .panel-block{
+  background: white;
+}
+
+.is-showing-complete .task-add-block{
+  display: none;
+}
+
+.task{
+  position: relative;
+  background: white; // draggable looks better with a background
+
+  .input{
+    margin-left: .5rem;
+  }
+
+  .is-handle{
+    position: absolute;
+    left: 0;
+    display: none;
+    cursor: move;
+  }
+
+  &:hover{
+    .is-handle{
+      display:inline-flex;
+    }
+  }
+
+  &.is-complete{
+    text-decoration: line-through;
+    opacity: .7;
+    pointer-events: none;
+
+    @include checked();
+  }
+
+  .is-completion-toggle{
+    margin-left: .5rem;
+    cursor: pointer;
+
+    .is-checked{
+      display:none;
+    }
+  }
+  .is-completion-toggle:hover{
+    @include checked();
+  }
+}
+
+.is-droppable{
+  border-bottom: 2px solid #dbdbdb;
+
+  &.is-over{
+    border-bottom: 2px solid dodgerblue;
+
+    input {
+      pointer-events: none; // prevent input from acting like a drop target
+    }
+  }
+}
+
+.is-dragging{
+  // opacity: .5; // makes the draggable harder to see
+}
+
+
+

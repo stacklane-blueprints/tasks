@@ -1,0 +1,79 @@
+<!--TEMPLATE mustache-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{{🎨.title}}</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.scss">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/stimulus@1.1.0/dist/stimulus.umd.js" integrity="sha256-4KV/iy8MHfeAUz3QV4sEhCoK4eT54AH1YxhvmN08h6s=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/drag-drop-touch@1.3.0/DragDropTouch.js" integrity="sha256-CUzA2+Ozg/WpuEsasvXpb+sD42TRkQJpnqFg6Kvn96I=" crossorigin="anonymous"></script>
+
+    <script defer src="/js/init.js"></script>
+    <script defer src="/js/modal.js"></script>
+    <script defer src="/js/notification.js"></script>
+    <script defer src="/js/tasks.js"></script>
+
+    {{% import {Task} from '📦'}}
+    {{% svg /_icons/ as ic }}
+</head>
+
+<body>
+
+<main>
+    <nav class="panel" data-controller="tasks">
+        <p class="panel-heading has-text-weight-semibold">
+            {{🎨.title}}
+        </p>
+
+        <p class="panel-tabs has-text-weight-semibold" data-target="tasks.states">
+            <a data-target="tasks.active" data-action="tasks#showActive">Active</a>
+            <a data-target="tasks.complete" data-action="tasks#showComplete">Completed</a>
+        </p>
+
+        <div class="panel-block task-add-block is-droppable" data-target="tasks.addTaskPanel">
+            <form data-action="tasks#add" class="control">
+                <input class="input" type="text" data-target="tasks.addTaskInput" placeholder="Add a task">
+            </form>
+        </div>
+
+        <div data-target="tasks.list">
+
+        </div>
+
+        <div class="panel-block"></div>
+
+        <!--
+            Template for individual tasks
+         -->
+        <template data-target="tasks.template">
+            <div class="task panel-block is-droppable"
+                 draggable="true" data-controller="task"
+                 data-task-id="" data-task-hierarchy="">
+
+                <span class="is-handle icon is-small">{{>ic-drag_indicator}}</span>
+
+                <span class="is-completion-toggle icon">
+                    <span data-action="click->task#markComplete" class="is-checked icon">{{>ic-checked}}</span>
+                    <span class="is-unchecked icon">{{>ic-unchecked}}</span>
+                </span>
+
+                <input class="input is-static is-medium is-paddingless"
+                       data-action="change->task#changeTitle"
+                       data-target="task.title" type="text" placeholder="">
+            </div>
+        </template>
+    </nav>
+</main>
+
+</body>
+
+</html>
+
