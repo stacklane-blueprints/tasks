@@ -17,8 +17,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/drag-drop-touch@1.3.0/DragDropTouch.js" integrity="sha256-CUzA2+Ozg/WpuEsasvXpb+sD42TRkQJpnqFg6Kvn96I=" crossorigin="anonymous"></script>
 
     <script defer src="/js/init.js"></script>
-    <script defer src="/js/modal.js"></script>
-    <script defer src="/js/notification.js"></script>
     <script defer src="/js/tasks.js"></script>
 
     {{% import {Task} from '📦'}}
@@ -50,9 +48,7 @@
 
         <div class="panel-block"></div>
 
-        <!--
-            Template for individual tasks
-         -->
+        {{! Template for individual tasks }}
         <template data-target="tasks.template">
             <div class="task panel-block is-droppable"
                  draggable="true" data-controller="task"
