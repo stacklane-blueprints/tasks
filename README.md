@@ -1,3 +1,20 @@
-# tasks
+# Tasks
 
-Add, complete, and prioritize tasks in a list
+Add, complete, and re-order tasks in a list.
+
+## Features Used
+
+- [Model](https://stacklane.com/docs/models/)
+- [Hierarchy Field](https://stacklane.com/docs/models/ordering#hierarchy)
+- [Supplier](https://stacklane.com/docs/scripting/suppliers)
+- [Dynamic Paths](https://stacklane.com/docs/endpoints/dynamic)
+- [JS Endpoints](https://stacklane.com/docs/endpoints/js)
+- [Mustache Endpoints](https://stacklane.com/docs/endpoints/mustache)
+- [Message Properties](https://stacklane.com/docs/settings/properties)
+- [SCSS](https://stacklane.com/docs/endpoints/assets)
+
+## Third Party Libraries
+
+- [StimulusJS](https://stimulusjs.org). Modest HTML hooks.
+- [Bulma](https://bulma.io). CSS Framework
+- DragDropTouch. Adapts HTML5 drag/drop to mobile touch.
