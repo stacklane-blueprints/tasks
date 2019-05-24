@@ -1,6 +1,6 @@
 # Tasks
 
-Add, complete, and re-order tasks in a list.
+Add, rename, complete, and reorder tasks in a list.
 
 ## Features Used
 
