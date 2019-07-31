@@ -5,6 +5,7 @@ Add, rename, complete, and reorder tasks in a list.
 ## Features Used
 
 - [Model](https://stacklane.com/docs/models/)
+- [Forms](https://stacklane.com/docs/models/forms)
 - [Hierarchy Field](https://stacklane.com/docs/models/ordering#hierarchy)
 - [Supplier](https://stacklane.com/docs/scripting/suppliers)
 - [Dynamic Paths](https://stacklane.com/docs/endpoints/dynamic)

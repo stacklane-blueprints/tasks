@@ -1,9 +1,8 @@
 import {Task} from '📦';
-import {TaskJson} from '📤';
-import {title} from 'form';
+import {TaskJson, NewTask} from '📤';
 
-TaskJson(
-    new Task()
-        .title(title)
-        .status(Task.status.active)
-);
+let task = new Task();
+
+NewTask.submit(task);
+
+TaskJson(task);

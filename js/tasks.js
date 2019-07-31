@@ -145,7 +145,7 @@
             var newRow = this._appendTask(title);
 
             var data = new FormData();
-            data.append('title', title);
+            data.append('Task_title', title);
 
             fetch('/api/tasks', {
                 method: 'POST', body: data, headers:{ Accept: 'application/json' },
@@ -234,11 +234,11 @@
             this.element.classList.add('is-complete');
 
             var data = new FormData();
-            data.append('status', 'complete');
+            data.append('Task_status', 'complete');
 
             var thiz = this;
-            fetch('/api/tasks/' + this.data.get('id'), {
-                method: 'PUT', body: data, headers:{ Accept: 'application/json' },
+            fetch('/api/tasks/' + this.data.get('id') + '/status', {
+                method: 'POST', body: data, headers:{ Accept: 'application/json' },
                 credentials: 'same-origin', mode: 'same-origin'
             }).then(function (response) {
                 if (response.status != 200) {
@@ -263,13 +263,13 @@
             this.changing = true;
 
             var data = new FormData();
-            data.append('title', this.titleTarget.value);
+            data.append('Task_title', this.titleTarget.value);
 
             var thiz = this;
             this.titleTarget.blur();
 
-            fetch('/api/tasks/' + this.data.get('id'), {
-                method: 'PUT', body: data, headers:{ Accept: 'application/json' },
+            fetch('/api/tasks/' + this.data.get('id') + '/title', {
+                method: 'POST', body: data, headers:{ Accept: 'application/json' },
                 credentials: 'same-origin', mode: 'same-origin'
             }).then(function (response) {
                 if (response.status != 200) {
